@@ -1,0 +1,140 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #ecf2f8;
+}
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.content {
+  display: grid;
+  grid-column: 255px 255px 255px 255px;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "purple-card purple-card gray-card white-card"
+  "white-card-small black-card black-card white-card"
+  ;
+  gap: 30px;
+  padding: 165px;
+}
+.purple-card{
+  grid-area: purple-card;
+  background: #733fc8;
+  position: relative;
+  background: #733fc8 url('./images/bg-pattern-quotation.svg') no-repeat right top;
+  background-position: right 60px top 20px; 
+  background-size: auto;
+}
+.white-card {
+  grid-area: white-card;
+  background: #ffffff;
+}
+.white-card .avatar {
+  color: #48556a;
+}
+.white-card .text-bold{
+  color: #48556a;
+}
+.gray-card {
+  grid-area: gray-card;
+  background: #48556a;
+}
+.white-card-small{
+  grid-area: white-card-small;
+  background: #ffffff;
+}
+.white-card-small .text-bold{
+  color: #48556a;
+}
+.white-card-small .avatar {
+  color: #48556a;
+}
+.black-card {
+  grid-area: black-card;
+  background: #19202d;
+}
+.card {
+  padding: 32px;
+  color: #ffffff;
+  border-radius: 8px;
+  position: relative;
+}
+.avatar img{
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  z-index: 1;
+}
+.img-icon {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  z-index: -1;
+}
+.content-texts {
+  z-index: 1;
+}
+.avatar-info {
+  display: flex;
+  flex-direction: column;
+}
+.text-bold {
+  margin-top: 16px;
+  font-size: 20px;
+}
+.text-small {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #b4a4cd;
+}
+@media (max-width: 680px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-areas: 
+      "purple-card"
+      "gray-card"
+      "white-card"
+      "white-card-small"
+      "black-card";
+    gap: 30px;
+    padding: 0;
+    overflow: hidden;
+    padding: 10px;
+  }
+  .purple-card {
+    grid-area: purple-card;
+    background: #733fc8;
+    position: relative;
+    background: #733fc8 no-repeat right top;
+    background-position: right 60px top 20px; 
+    background-size: auto;
+  }
+  .white-card {
+    grid-area: white-card;
+    background: #ffffff;
+  }
+  .gray-card {
+    grid-area: gray-card;
+    background: #48556a;
+  }
+  .white-card-small {
+    grid-area: white-card-small;
+    background: #ffffff;
+  }
+  .black-card {
+    grid-area: black-card;
+    background: #19202d;
+  }
+}
